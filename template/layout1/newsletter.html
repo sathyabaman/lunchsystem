@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="admin-themes-lab">
+    <meta name="author" content="themes-lab">
+    <link rel="shortcut icon" href="../assets/global/images/favicon.png" type="image/png">
+    <title>Dashboard -Lunch</title>
+    <link href="../assets/global/css/style.css" rel="stylesheet">
+    <link href="../assets/global/css/theme.css" rel="stylesheet">
+    <link href="../assets/global/css/ui.css" rel="stylesheet">
+    <link href="../assets/admin/layout1/css/layout.css" rel="stylesheet">
+    <!-- BEGIN PAGE STYLE -->
+    <link href="../assets/global/plugins/metrojs/metrojs.min.css" rel="stylesheet">
+    <link href="../assets/global/plugins/maps-amcharts/ammap/ammap.min.css" rel="stylesheet">
+    <!-- END PAGE STYLE -->
+    <script src="../assets/global/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+
+  <body class="fixed-topbar fixed-sidebar theme-sdtl color-default">
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <section>
+      <!-- BEGIN SIDEBAR -->
+      <div class="sidebar">
+        <div class="logopanel">
+          <h1>
+            <a href="dashboard.html"></a>
+          </h1>
+        </div>
+        <div class="sidebar-inner">
+          <div class="sidebar-top">
+            <form action="search-result.html" method="post" class="searchform" id="search-results">
+              <input type="text" class="form-control" name="keyword" placeholder="Search...">
+            </form>
+          </div>
+          <div class="menu-title">
+            Navigation 
+            <div class="pull-right menu-settings">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-delay="300"> 
+              <i class="icon-settings"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#" id="reorder-menu" class="reorder-menu">Reorder menu</a></li>
+                <li><a href="#" id="remove-menu" class="remove-menu">Remove elements</a></li>
+                <li><a href="#" id="hide-top-sidebar" class="hide-top-sidebar">Hide user &amp; search</a></li>
+              </ul>
+            </div>
+          </div>
+          <ul class="nav nav-sidebar">
+            <li>
+              <a href="dashboard.html"><i class="icon-home"></i><span>Dashboard</span></a>
+            </li>
+            <li class="nav-parent">
+              <a href="#"><i class="icon-bulb"></i><span>Schools</span> <span class="fa arrow"></span></a>
+              <ul class="children collapse">
+                <li>
+                  <a href="mngschool.html">Manage School</a>
+                </li>
+                <li>
+                  <a href="addschool.html">Add School</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-parent">
+              <a href="#"><i class="icon-bulb"></i><span>Parents</span> <span class="fa arrow"></span></a>
+              <ul class="children collapse">
+                <li>
+                  <a href="mngparent.html">Manage Parents</a>
+                </li>
+                <li>
+                  <a href="addparent.html">Add Parent</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-parent">
+              <a href="#"><i class="icon-bulb"></i><span>Students</span> <span class="fa arrow"></span></a>
+              <ul class="children collapse">
+                <li>
+                  <a href="mngstudent.html">Manage Students</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-parent">
+              <a href="#"><i class="icon-bulb"></i><span>Menu</span> <span class="fa arrow"></span></a>
+              <ul class="children collapse">
+                <li>
+                  <a href="mngmenu.html">Manage Menu</a>
+                </li>
+                <li>
+                  <a href="addmenu.html">Add Menu</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="orders.html"><i class="icon-home"></i><span>Orders</span></a>
+            </li>
+            <li class="nav-active active">
+              <a href="newsletter.html"><i class="icon-home"></i><span>Newsletter</span></a>
+            </li>
+          </ul>
+          <!-- SIDEBAR WIDGET FOLDERS -->          
+          <div class="sidebar-footer clearfix">
+            <a class="pull-left footer-settings" href="#" data-rel="tooltip" data-placement="top" data-original-title="Settings">
+            <i class="icon-settings"></i></a>
+            <a class="pull-left toggle_fullscreen" href="#" data-rel="tooltip" data-placement="top" data-original-title="Fullscreen">
+            <i class="icon-size-fullscreen"></i></a>
+            <a class="pull-left" href="user-lockscreen.html" data-rel="tooltip" data-placement="top" data-original-title="Lockscreen">
+            <i class="icon-lock"></i></a>
+            <a class="pull-left btn-effect" href="user-login-v1.html" data-modal="modal-1" data-rel="tooltip" data-placement="top" data-original-title="Logout">
+            <i class="icon-power"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- END SIDEBAR -->
+      <div class="main-content">
+        <!-- BEGIN TOPBAR -->
+        <div class="topbar">
+          <div class="header-left">
+
+          </div>
+          <div class="header-right">
+            <ul class="header-menu nav navbar-nav">
+              <!-- BEGIN USER DROPDOWN -->
+              <li class="dropdown" id="language-header">
+                <a href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                <i class="icon-globe"></i>
+                <span>Language</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" data-lang="en"><img src="../assets/global/images/flags/usa.png" alt="flag-english"> <span>English</span></a>
+                  </li>
+
+                  <li>
+                    <a href="#" data-lang="fr"><img src="../assets/global/images/flags/french.png" alt="flag-english"> <span>Français</span></a>
+                  </li>
+                </ul>
+              </li>
+              <!-- END USER DROPDOWN -->
+            </ul>
+          </div>
+          <!-- header-right -->
+        </div>
+        <!-- END TOPBAR -->
+        <!-- BEGIN PAGE CONTENT -->
+        <div class="page-content page-app mailbox mailbox-send">
+          <section class="app">
+            <aside class="aside-sm emails-list">
+              <section>
+                <div class="mailbox-page clearfix">
+                  <div class="append-icon">
+                    <input type="text" class="form-control form-white pull-right" id="email-search" placeholder="Search...">
+                    <i class="icon-magnifier"></i>
+                  </div>
+                </div>
+                <ul class="nav nav-tabs text-right">
+                  <li class="emails-action">
+                    <i class="icon-rounded-arrow-curve-left"></i>
+                    <i class=" icon-rounded-heart"></i>
+                    <div class="pos-rel dis-inline">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-delay="300"> 
+                      <i class=" icon-rounded-arrow-down-thin"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#" class="reorder-menu">Select All</a></li>
+                        <li><a href="#" class="remove-menu">Not Read</a></li>
+                        <li><a href="#" class="hide-top-sidebar">Read</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="active f-right"><a href="#recent" data-toggle="tab">Recent</a></li>
+                  <li class="f-right"><a href="#alphabetically" data-toggle="tab">Alphabetically</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade" id="alphabetically">
+                    <div class="messages-list withScroll show-scroll" data-padding="200" data-height="window">
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar11_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Bobby Brown</div>
+                            <div class="email">bobby-brown@gmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar8_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Bobby Hook</div>
+                            <div class="email">bobby-Hook@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar4_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">John Snow</div>
+                            <div class="email">jsnow@msn.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar6_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">James Miller</div>
+                            <div class="email">james-miller@aol.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar7_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Martin Descker</div>
+                            <div class="email">m-descker@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar5_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Kim Bauer</div>
+                            <div class="email">kim-bauer@gmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar9_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Jack Jefferson</div>
+                            <div class="email">j-j@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar10_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Sam Harris</div>
+                            <div class="email">sam-harris@aol.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar12_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Scott Thomson</div>
+                            <div class="email">s-thomson@msn.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar13_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">John Mac Douglas</div>
+                            <div class="email">j-douglas@hotmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar1_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Michael B.</div>
+                            <div class="email">michael-b@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar2_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Meagan Miller</div>
+                            <div class="email">m-miller@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar4_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Fred Aster</div>
+                            <div class="email">f-aster@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar3_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Aretha Franlin</div>
+                            <div class="email">a-franklin@gmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade in active" id="recent">
+                    <div class="messages-list withScroll show-scroll" data-padding="200" data-height="window">
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar4_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">John Snow</div>
+                            <div class="email">j-snow@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar3_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Sarah Higgle</div>
+                            <div class="email">s-higgle@gmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar6_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">James Miller</div>
+                            <div class="email">j-miller@hotmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar7_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Martin Descker</div>
+                            <div class="email">m-descker@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar5_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Kim Bauer</div>
+                            <div class="email">kim-bauer@hotmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar8_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Bobby Hook</div>
+                            <div class="email">bobby-Hook@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar9_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Jack Jefferson</div>
+                            <div class="email">j-jefferson@msn.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar10_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Sam Harris</div>
+                            <div class="email">s-harris@aol.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar11_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Bobby Brown</div>
+                            <div class="email">b-brown@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar12_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Scott Thomson</div>
+                            <div class="email">s-thomson@gmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar13_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">John Mac Douglas</div>
+                            <div class="email">j-douglas@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar1_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Michael B.</div>
+                            <div class="email">michael-b@msn.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar2_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Meagan Miller</div>
+                            <div class="email">m-miller@yahoo.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar4_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Fred Aster</div>
+                            <div class="email">f-aster@gmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="message-item media">
+                        <div class="media">
+                          <img src="../assets/global/images/avatars/avatar3_big.png" alt="avatar 3" width="40" class="sender-img">
+                          <div class="media-body">
+                            <div class="sender">Aretha Franlin</div>
+                            <div class="email">a-franklin@hotmail.com</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </aside>
+            <div class="email-details">
+              <section>
+                <div class="email-subject">
+                  <h1><strong>Write</strong> an email</h1>
+                  <div class="clearfix">
+                    <p>from <strong><span class="sender">Me</span></strong> &bull; <span class="date-send"></span></p>
+                    <div class="pos-rel pull-left">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-delay="300"> 
+                      <i class=" icon-rounded-arrow-down-thin"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#" class="reorder-menu">Delete email</a></li>
+                        <li><a href="#" class="remove-menu">Move</a></li>
+                        <li><a href="#" class="hide-top-sidebar">Print</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="email-details-inner withScroll" data-height="window" data-padding="200">
+                  <div class="answers">
+                    <div class="answer-subject">
+                      <h2 class="answer-title"></h2>
+                      <p>from <strong>me</strong> &bull; <span class="answer-date"></span></p>
+                    </div>
+                    <div class="answer-content"></div>
+                  </div>
+                  <div class="send-to m-t-10">
+                    <div class="form-group">
+                      <div>
+                        <input data-role="tagsinput" id="recipient" class="form-control form-white" value="martin-becket@gmail.com">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="subject m-t-10">
+                    <input class="form-control form-white" type="text" placeholder="Subject">
+                  </div>
+                  <div class="write-answer">
+                    <div class="answer-textarea"></div>
+                    <button id="save" class="btn btn-primary" type="button">Send</button>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+          <div class="footer">
+            <div class="copyright">
+              <p class="pull-left sm-pull-reset">
+                <span>Copyright <span class="copyright">©</span> 2015 </span>
+                <span>THEMES LAB</span>.
+                <span>All rights reserved. </span>
+              </p>
+              <p class="pull-right sm-pull-reset">
+                <span><a href="#" class="m-r-10">Support</a> | <a href="#" class="m-l-10 m-r-10">Terms of use</a> | <a href="#" class="m-l-10">Privacy Policy</a></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+      </div>
+      <!-- END MAIN CONTENT -->
+    </section>
+    <!-- BEGIN SEARCH -->
+    <div id="morphsearch" class="morphsearch">
+      <form class="morphsearch-form">
+        <input class="morphsearch-input" type="search" placeholder="Search..."/>
+        <button class="morphsearch-submit" type="submit">Search</button>
+      </form>
+      <!-- /morphsearch-content -->
+      <span class="morphsearch-close"></span>
+    </div>
+    <!-- END SEARCH -->
+    <!-- BEGIN PRELOADER -->
+    <div class="loader-overlay">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+    <!-- END PRELOADER -->
+    <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a> 
+    <script src="../assets/global/plugins/jquery/jquery-1.11.1.min.js"></script>
+    <script src="../assets/global/plugins/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../assets/global/plugins/jquery-ui/jquery-ui-1.11.2.min.js"></script>
+    <script src="../assets/global/plugins/gsap/main-gsap.min.js"></script>
+    <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/global/plugins/jquery-cookies/jquery.cookies.min.js"></script> <!-- Jquery Cookies, for theme -->
+    <script src="../assets/global/plugins/jquery-block-ui/jquery.blockUI.min.js"></script> <!-- simulate synchronous behavior when using AJAX -->
+    <script src="../assets/global/plugins/bootbox/bootbox.min.js"></script> <!-- Modal with Validation -->
+    <script src="../assets/global/plugins/mcustom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script> <!-- Custom Scrollbar sidebar -->
+    <script src="../assets/global/plugins/bootstrap-dropdown/bootstrap-hover-dropdown.min.js"></script> <!-- Show Dropdown on Mouseover -->
+    <script src="../assets/global/plugins/charts-sparkline/sparkline.min.js"></script> <!-- Charts Sparkline -->
+    <script src="../assets/global/plugins/retina/retina.min.js"></script> <!-- Retina Display -->
+    <script src="../assets/global/plugins/select2/select2.min.js"></script> <!-- Select Inputs -->
+    <script src="../assets/global/plugins/icheck/icheck.min.js"></script> <!-- Checkbox & Radio Inputs -->
+    <script src="../assets/global/plugins/backstretch/backstretch.min.js"></script> <!-- Background Image -->
+    <script src="../assets/global/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js"></script> <!-- Animated Progress Bar -->
+    <script src="../assets/global/plugins/charts-chartjs/Chart.min.js"></script>
+    <script src="../assets/global/js/builder.js"></script> <!-- Theme Builder -->
+    <script src="../assets/global/js/sidebar_hover.js"></script> <!-- Sidebar on Hover -->
+    <script src="../assets/global/js/application.js"></script> <!-- Main Application Script -->
+    <script src="../assets/global/js/plugins.js"></script> <!-- Main Plugin Initialization Script -->
+    <script src="../assets/global/js/widgets/notes.js"></script> <!-- Notes Widget -->
+    <script src="../assets/global/js/quickview.js"></script> <!-- Chat Script -->
+    <script src="../assets/global/js/pages/search.js"></script> <!-- Search Script -->
+    <!-- BEGIN PAGE SCRIPTS -->
+    <script src="../assets/global/plugins/bootstrap-context-menu/bootstrap-contextmenu.min.js"></script> 
+    <script src="../assets/global/plugins/summernote/summernote.min.js"></script> <!-- Simple HTML Editor -->
+    <script src="../assets/global/plugins/quicksearch/quicksearch.min.js"></script> <!-- Search Filter -->
+    <script src="../assets/global/plugins/charts-morris/raphael.min.js"></script> <!-- Morris Charts -->
+    <script src="../assets/global/plugins/charts-morris/morris.min.js"></script> <!-- Morris Charts -->
+    <script src="../assets/global/js/pages/mailbox.js"></script>
+    <!-- BEGIN PAGE SCRIPTS -->
+    <script src="../assets/admin/layout1/js/layout.js"></script>
+  </body>
+</html>

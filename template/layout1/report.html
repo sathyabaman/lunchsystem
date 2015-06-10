@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="admin-surplusdev.com">
+    <meta name="author" content="surplusdev.com">
+    <link rel="shortcut icon" href="../assets/global/images/favicon.png" type="image/png">
+    <title>Dashboard -Lunch</title>
+    <link href="../assets/global/css/style.css" rel="stylesheet">
+    <link href="../assets/global/css/theme.css" rel="stylesheet">
+    <link href="../assets/global/css/ui.css" rel="stylesheet">
+    <link href="../assets/admin/layout1/css/layout.css" rel="stylesheet">
+    <!-- BEGIN PAGE STYLE -->
+    <link href="../assets/global/plugins/metrojs/metrojs.min.css" rel="stylesheet">
+    <link href="../assets/global/plugins/maps-amcharts/ammap/ammap.min.css" rel="stylesheet">
+    <!-- END PAGE STYLE -->
+    <script src="../assets/global/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+
+  <body class="fixed-topbar fixed-sidebar theme-sdtl color-default">
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <section>
+      <!-- BEGIN SIDEBAR -->
+      <div class="sidebar">
+        <div class="logopanel">
+          <h1>
+            <a href="dashboard.html"></a>
+          </h1>
+        </div>
+        <div class="sidebar-inner">
+          <div class="sidebar-top">
+            <form action="search-result.html" method="post" class="searchform" id="search-results">
+              <input type="text" class="form-control" name="keyword" placeholder="Search...">
+            </form>
+          </div>
+          <div class="menu-title">
+            Navigation 
+            <div class="pull-right menu-settings">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" data-delay="300"> 
+              <i class="icon-settings"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#" id="reorder-menu" class="reorder-menu">Reorder menu</a></li>
+                <li><a href="#" id="remove-menu" class="remove-menu">Remove elements</a></li>
+                <li><a href="#" id="hide-top-sidebar" class="hide-top-sidebar">Hide user &amp; search</a></li>
+              </ul>
+            </div>
+          </div>
+          <ul class="nav nav-sidebar">
+            <li>
+              <a href="dashboard.html"><i class="icon-home"></i><span>Dashboard</span></a>
+            </li>
+            <li class="nav-parent">
+              <a href="#"><i class="icon-bulb"></i><span>Schools</span> <span class="fa arrow"></span></a>
+              <ul class="children collapse">
+                <li>
+                  <a href="mngschool.html">Manage School</a>
+                </li>
+                <li>
+                  <a href="addschool.html">Add School</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-parent">
+              <a href="#"><i class="icon-bulb"></i><span>Parents</span> <span class="fa arrow"></span></a>
+              <ul class="children collapse">
+                <li>
+                  <a href="mngparent.html">Manage Parents</a>
+                </li>
+                <li>
+                  <a href="addparent.html">Add Parent</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-parent">
+              <a href="#"><i class="icon-bulb"></i><span>Students</span> <span class="fa arrow"></span></a>
+              <ul class="children collapse">
+                <li>
+                  <a href="mngstudent.html">Manage Students</a>
+                </li>
+              </ul>
+            </li>
+              <li class="nav-parent">
+                  <a href="#"><i class="icon-bulb"></i><span>Vendor</span> <span class="fa arrow"></span></a>
+                  <ul class="children collapse">
+                      <li>
+                          <a href="mngvendor.html">Manage Vendor</a>
+                      </li>
+                      <li>
+                          <a href="addvendor.html">Add Vendor</a>
+                      </li>
+                  </ul>
+              </li>
+            <li class="nav-parent">
+              <a href="#"><i class="icon-bulb"></i><span>Menu</span> <span class="fa arrow"></span></a>
+              <ul class="children collapse">
+                <li>
+                  <a href="mngmenu.html">Manage Menu</a>
+                </li>
+                <li>
+                  <a href="addmenu.html">Add Menu</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-active ">
+              <a href="orders.html"><i class="icon-home"></i><span>Orders</span></a>
+            </li>
+            <li>
+              <a href="newsletter.html"><i class="icon-home"></i><span>Newsletter</span></a>
+            </li>
+              <li class="nav-active active">
+                  <a href="orders.html"><i class="icon-home"></i><span>Report</span></a>
+              </li>
+          </ul>
+          <!-- SIDEBAR WIDGET FOLDERS -->          
+          <div class="sidebar-footer clearfix">
+            <a class="pull-left footer-settings" href="#" data-rel="tooltip" data-placement="top" data-original-title="Settings">
+            <i class="icon-settings"></i></a>
+            <a class="pull-left toggle_fullscreen" href="#" data-rel="tooltip" data-placement="top" data-original-title="Fullscreen">
+            <i class="icon-size-fullscreen"></i></a>
+            <a class="pull-left" href="user-lockscreen.html" data-rel="tooltip" data-placement="top" data-original-title="Lockscreen">
+            <i class="icon-lock"></i></a>
+            <a class="pull-left btn-effect" href="user-login-v1.html" data-modal="modal-1" data-rel="tooltip" data-placement="top" data-original-title="Logout">
+            <i class="icon-power"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- END SIDEBAR -->
+      <div class="main-content">
+        <!-- BEGIN TOPBAR -->
+        <div class="topbar">
+          <div class="header-left">
+
+          </div>
+          <div class="header-right">
+            <ul class="header-menu nav navbar-nav">
+              <!-- BEGIN USER DROPDOWN -->
+              <li class="dropdown" id="language-header">
+                <a href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                <i class="icon-globe"></i>
+                <span>Language</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" data-lang="en"><img src="../assets/global/images/flags/usa.png" alt="flag-english"> <span>English</span></a>
+                  </li>
+                  <li>
+                    <a href="#" data-lang="fr"><img src="../assets/global/images/flags/french.png" alt="flag-english"> <span>Français</span></a>
+                  </li>
+                </ul>
+              </li>
+              <!-- END USER DROPDOWN -->
+            </ul>
+          </div>
+          <!-- header-right -->
+        </div>
+        <!-- END TOPBAR -->
+        <!-- BEGIN PAGE CONTENT -->
+        <div class="page-content page-thin">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="col-lg-4">
+                      <div class="form-group">
+
+                          <div class="option-group">
+                              <label class="control-label  ">School</label>
+                              <select id="School" name="School" class="form-control" >
+                                  <option value="">Select School</option>
+                                  <option value="EN">1</option>
+                                  <option value="FR">2</option>
+                                  <option value="SP">3</option>
+                                  <option value="CH"> 4</option>
+                                  <option value="JP"> 5</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4">
+                      <div class="form-group">
+
+                          <div class="option-group">
+                              <label class="control-label">State Date</label>
+                              <input type="text" name="firstname" class="form-control" minlength="3" placeholder="Minimum 3 characters..." required="" aria-required="true">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-4">
+                      <div class="form-group">
+
+                          <div class="option-group">
+                              <label class="control-label">End Date</label>
+                              <input type="text" name="firstname" class="form-control" minlength="3" placeholder="Minimum 3 characters..." required="" aria-required="true">
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="col-lg-12">
+                  <div class="col-md-12">
+                      <div class="panel">
+                          <div class="panel-header ">
+                              <h3>Report </h3>
+                              <div class="panel-content">
+                                  <div class="tab_left">
+                                      <ul class="nav nav-tabs nav-red">
+                                          <li class="active"><a href="#tab3_1" data-toggle="tab" aria-expanded="false">Classroom 1</a></li>
+                                          <li class=""><a href="#tab3_2" data-toggle="tab" aria-expanded="false">Classroom 2</a></li>
+                                          <li class=""><a href="#tab3_3" data-toggle="tab" aria-expanded="true"> Total</a></li>
+                                      </ul>
+                                      <div class="tab-content">
+                                          <div class="tab-pane fade active in" id="tab3_1">
+                                              <table class="table table-hover dataTable">
+                                                  <thead>
+                                                  <tr>
+                                                      <th>Date</th>
+                                                      <th>Student</th>
+                                                      <th>Item</th>
+                                                  </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                  <tr>
+                                                      <td>Smith</td>
+                                                      <td>John</td>
+                                                      <td>435</td>
+                                                  </tr>
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                          <div class="tab-pane fade" id="tab3_2">
+                                              <table class="table table-hover dataTable">
+                                                  <thead>
+                                                  <tr>
+                                                      <th>Date</th>
+                                                      <th>Student</th>
+                                                      <th>Item</th>
+                                                  </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                  <tr>
+                                                      <td>Smith</td>
+                                                      <td>John</td>
+                                                      <td>435</td>
+                                                  </tr>
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                          <div class="tab-pane fade " id="tab3_3">
+                                              <table class="table table-hover dataTable">
+                                                  <thead>
+                                                  <tr>
+                                                      <th>Date</th>
+                                                      <th>Items</th>
+                                                      <th>Total Number</th>
+                                                  </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                  <tr>
+                                                      <td>Smith</td>
+                                                      <td>John</td>
+                                                      <td>435</td>
+                                                  </tr>
+                                                  </tbody>
+                                              </table>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            <div class="clearfix"></div>
+          <div class="footer">
+            <div class="copyright">
+              <p class="pull-left sm-pull-reset">
+                <span>Copyright <span class="copyright">©</span> 2015 </span>
+                <span><a href="http://surplusdev.com">Surplus</a></span>.
+                <span>All rights reserved. </span>
+              </p>
+              <p class="pull-right sm-pull-reset">
+                <span><a href="#" class="m-r-10">Support</a> | <a href="#" class="m-l-10 m-r-10">Terms of use</a> | <a href="#" class="m-l-10">Privacy Policy</a></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+      </div>
+      <!-- END MAIN CONTENT -->
+    </section>
+    <!-- BEGIN QUICKVIEW SIDEBAR -->
+    <!-- END QUICKVIEW SIDEBAR -->
+    <!-- BEGIN SEARCH -->
+    <div id="morphsearch" class="morphsearch">
+      <form class="morphsearch-form">
+        <input class="morphsearch-input" type="search" placeholder="Search..."/>
+        <button class="morphsearch-submit" type="submit">Search</button>
+      </form>
+      <!-- /morphsearch-content -->
+      <span class="morphsearch-close"></span>
+    </div>
+    <!-- END SEARCH -->
+    <!-- BEGIN PRELOADER -->
+    <div class="loader-overlay">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+    <!-- END PRELOADER -->
+    <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a> 
+    <script src="../assets/global/plugins/jquery/jquery-1.11.1.min.js"></script>
+    <script src="../assets/global/plugins/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../assets/global/plugins/jquery-ui/jquery-ui-1.11.2.min.js"></script>
+    <script src="../assets/global/plugins/gsap/main-gsap.min.js"></script>
+    <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/global/plugins/jquery-cookies/jquery.cookies.min.js"></script> <!-- Jquery Cookies, for theme -->
+    <script src="../assets/global/plugins/jquery-block-ui/jquery.blockUI.min.js"></script> <!-- simulate synchronous behavior when using AJAX -->
+    <script src="../assets/global/plugins/bootbox/bootbox.min.js"></script> <!-- Modal with Validation -->
+    <script src="../assets/global/plugins/mcustom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script> <!-- Custom Scrollbar sidebar -->
+    <script src="../assets/global/plugins/bootstrap-dropdown/bootstrap-hover-dropdown.min.js"></script> <!-- Show Dropdown on Mouseover -->
+    <script src="../assets/global/plugins/charts-sparkline/sparkline.min.js"></script> <!-- Charts Sparkline -->
+    <script src="../assets/global/plugins/retina/retina.min.js"></script> <!-- Retina Display -->
+    <script src="../assets/global/plugins/select2/select2.min.js"></script> <!-- Select Inputs -->
+    <script src="../assets/global/plugins/icheck/icheck.min.js"></script> <!-- Checkbox & Radio Inputs -->
+    <script src="../assets/global/plugins/backstretch/backstretch.min.js"></script> <!-- Background Image -->
+    <script src="../assets/global/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js"></script> 
+    <!-- Animated Progress Bar -->
+    <script src="../assets/global/js/builder.js"></script> <!-- Theme Builder -->
+    <script src="../assets/global/js/sidebar_hover.js"></script> <!-- Sidebar on Hover -->
+    <script src="../assets/global/js/application.js"></script> <!-- Main Application Script -->
+    <script src="../assets/global/js/plugins.js"></script> <!-- Main Plugin Initialization Script -->
+    <script src="../assets/global/js/widgets/notes.js"></script> <!-- Notes Widget -->
+    <script src="../assets/global/js/quickview.js"></script> <!-- Chat Script -->
+    <script src="../assets/global/js/pages/search.js"></script> <!-- Search Script -->
+    <!-- BEGIN PAGE SCRIPT -->
+    
+    <script src="../assets/global/plugins/datatables/jquery.dataTables.min.js"></script> <!-- Tables Filtering, Sorting & Editing -->
+    <script src="../assets/global/js/pages/table_editable.js"></script>
+    <script src="../assets/admin/layout1/js/layout.js"></script>
+
+
+
+  </body>
+</html>
+
